@@ -39,7 +39,7 @@ def get_campesinos():
     return jsonify(all_campesinos)
 
 
-@app.route("/get-campesino-by-cultivo/<cultivo>", methods=["GET"])
+@app.route("/get-campesinos-by-cultivo/<cultivo>", methods=["GET"])
 def get_campesinos_by_cultivo(cultivo):
     campesinos = list(campesinos_collection.find({"cultivo": cultivo}, {"_id": 0}))
     return jsonify(campesinos)
